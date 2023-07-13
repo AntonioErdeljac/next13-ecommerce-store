@@ -22,7 +22,7 @@ const Filter: React.FC<FilterProps> = ({
   const router = useRouter();
 
   const selectedValue = searchParams.get(valueKey);
-  
+
   const onClick = (id: string) => {
     const current = qs.parse(searchParams.toString());
 
@@ -40,10 +40,10 @@ const Filter: React.FC<FilterProps> = ({
       query,
     }, { skipNull: true });
 
-    router.push(url);
+    router.push(url, { scroll: false });
   }
 
-  return ( 
+  return (
     <div className="mb-8">
       <h3 className="text-lg font-semibold">
         {name}
